@@ -27,7 +27,8 @@ public class Main  {
         System.out.println("Выбери номер задания" +
                 "\n 1 - сами сотрудники" +
                 "\n 2 - топ 10 по зп" +
-                "\n 3 - топ 10 патриотов");
+                "\n 3 - топ 10 патриотов" +
+                "\n 4 - принять на работу");
         int a = in.nextInt();
         switch (a){
             case 1:
@@ -39,12 +40,9 @@ public class Main  {
             case 3:
                 helper.top10pPatriots();
                 break;
+            case  4:
+                helper.recruit();
+                break;
         }
-
-//        Helper.initStaff().forEach(e -> System.out.println(e.toString()));
-//        Helper.initStaff().forEach(e-> System.out.println(Set.toList.sorted));
-
-
-
     }
 }

@@ -4,11 +4,9 @@ import java.util.*;
 
 
 final class  Helper {
-
-//    public static List<Employee> initStaff() {
-
+    Scanner in = new Scanner(System.in);
+int works;
        public List<Employee> list = new ArrayList<>();{
-//           System.out.println(list.size());
         list.add(new Employee(1, "Юрий", "Иванов", "Иванович", 'M',
                 "89003233333", LocalDate.parse("2021-01-24"), 32000));
         list.add(new Employee(2, "Николай", "Кузнецов", "Михайлович", 'M',
@@ -31,6 +29,7 @@ final class  Helper {
                 "89003232443", LocalDate.parse("2019-01-24"), 212000));
         list.add(new Employee(10, "Людмила", "Васильевна", "Васильевна", 'Ж',
                 "89003232443", LocalDate.parse("2019-01-24"), 23455));
+        works = list.size();
 //return list;
     }
 
@@ -45,7 +44,7 @@ final class  Helper {
 
     public void  top10Salary(){
         System.out.println("Топ 10 по зарплате: " );
-        list.sort(new Compar());
+        list.sort(Comparator.comparing(Employee::getSalary));
         for(int i = 0; i< list.size()& i< 10; i++) {
             System.out.println(list.get(i));
         }
@@ -59,7 +58,32 @@ final class  Helper {
         for(int i = 0; i< list.size()& i< 10; i++) {
             System.out.println(list.get(i));
         }
+    }
 
+    public void recruit() {
+        System.out.println("Введи ID");
+        int ID = in.nextInt();
+        System.out.println("Введи name");
+        String name = in.nextLine();
+        System.out.println("Введи surname");
+        String surname = in.nextLine();
+        System.out.println("Введи patronymic");
+        String patronymic = in.nextLine();
+        System.out.println("Введи floor");
+        String b = in.next();
+        char floor = b.charAt(b.length() - 1);
+        System.out.println("Введи telephone");
+        String telephone = in.nextLine();
+        System.out.println("Введи startWork");
+        LocalDate startWork = LocalDate.of(in.nextInt(), in.nextInt(), in.nextInt());
+        System.out.println("Введи зп");
+        int salary = in.nextInt();
+        list.add(new Employee(ID, name, surname, patronymic, floor, telephone, startWork, salary));
+
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(list.get(i));
+
+        }
     }
 
 }

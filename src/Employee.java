@@ -9,7 +9,63 @@ public class Employee {
     LocalDate startWork;// дата
     char floor;         // пол
     String telephone;   // телефон
-    int salary;
+    int salary;         // зп
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getPatronymic() {
+        return patronymic;
+    }
+
+    public void setPatronymic(String patronymic) {
+        this.patronymic = patronymic;
+    }
+
+    public void setStartWork(LocalDate startWork) {
+        this.startWork = startWork;
+    }
+
+    public char getFloor() {
+        return floor;
+    }
+
+    public void setFloor(char floor) {
+        this.floor = floor;
+    }
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
+
+    public void setSalary(int salary) {
+        this.salary = salary;
+    }
 
     public LocalDate getStartWork() {
         return startWork;
