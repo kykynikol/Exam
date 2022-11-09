@@ -3,6 +3,7 @@ import java.util.*;
 
 
 
+
 final class  Helper {
     Scanner in = new Scanner(System.in);
 int works;
@@ -37,9 +38,9 @@ int works;
 
     public void printAll(){
         System.out.println("Список сотрудников: ");
-    for(int i = 0; i< list.size(); i++) {
-        System.out.println(list.get(i));
-    }
+        for (Employee employee : list) {
+            System.out.println(employee);
+        }
 }
 
     public void  top10Salary(){
@@ -80,8 +81,8 @@ int works;
         int salary = in.nextInt();
         list.add(new Employee(ID, name, surname, patronymic, floor, telephone, startWork, salary));
 
-        for (int i = 0; i < list.size(); i++) {
-            System.out.println(list.get(i));
+        for (Employee employee : list) {
+            System.out.println(employee);
 
         }
     }
