@@ -87,4 +87,18 @@ int works;
         }
     }
 
+    public void removeWorker(){
+        Scanner scanner=new Scanner(System.in);
+        System.out.println("Удалять работников стоит,начав с цифр 12..");
+        int identificated=scanner.nextInt();
+        for (int i=0; i< list.size(); i++) {
+            if(list.get(i).getID()==identificated) {
+                list.remove(i);
+            }
+        }
+        for (Employee employee : list) {
+            System.out.println(employee);
+        }
+    }
+
 }

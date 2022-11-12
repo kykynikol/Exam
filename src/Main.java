@@ -28,7 +28,8 @@ public class Main  {
                 "\n 1 - сами сотрудники" +
                 "\n 2 - топ 10 по зп" +
                 "\n 3 - топ 10 патриотов" +
-                "\n 4 - принять на работу");
+                "\n 4 - принять на работу" +
+                "\n 5 - уволить сотрудника");
         int a = in.nextInt();
         switch (a){
             case 1:
@@ -42,6 +43,9 @@ public class Main  {
                 break;
             case  4:
                 helper.recruit();
+                break;
+            case 5:
+                helper.removeWorker();
                 break;
         }
     }
