@@ -1,3 +1,5 @@
+import java.io.File;
+import java.io.IOException;
 import java.util.*;
 
 /**
@@ -20,8 +22,10 @@ import java.util.*;
  */
 
 public class Main  {
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_YELLOW = "\u001B[33m";
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Helper helper = new Helper();
         Scanner in = new Scanner(System.in);
         System.out.println("Выбери номер задания" +
@@ -29,11 +33,16 @@ public class Main  {
                 "\n 2 - топ 10 по зп" +
                 "\n 3 - топ 10 патриотов" +
                 "\n 4 - принять на работу" +
-                "\n 5 - уволить сотрудника");
+                "\n 5 - уволить сотрудника" +
+                "\n 6 - файл" +
+                ANSI_YELLOW +"\n\t Для выхода из программы введите 0" + ANSI_RESET);
         int a = in.nextInt();
         switch (a){
+            case '0':
+                System.exit(0);
             case 1:
                 helper.printAll();
+
                 break;
             case 2:
                 helper.top10Salary();
@@ -46,6 +55,9 @@ public class Main  {
                 break;
             case 5:
                 helper.removeWorker();
+                break;
+            case 6:
+                helper.file();
                 break;
         }
     }
